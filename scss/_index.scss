@@ -1,0 +1,131 @@
+$color-primario: white;
+$color-naranja: #ca9a15;
+$background-animado: url("../multimedia/giphy\ \(1\).webp") no-repeat center center/cover;
+
+@mixin sizes($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+.imagen {
+  @include sizes(200px, 200px);
+}
+
+.contenido-encabezado {
+  background: $background-animado;
+
+  .encabezado {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .boton-externo {
+      color: $color-primario;
+      text-decoration: none;
+      font-size: 20px;
+      border: 5px solid $color-primario;
+      background-color: $color-primario;
+      @include sizes(100px, 20px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        background-color: $color-naranja;
+        transform: scale(1.05);
+      }
+
+      .boton-interno {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+}
+
+.fondoss {
+  width: 100%;
+  padding: 20px 0 20px 0;
+  background-image: url("../multimedia/fondoss.jpg");
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  margin-top: 30px;
+
+  .carl-bar {
+    @include sizes(700px, 360px);
+    color: white;
+    backdrop-filter: blur(10px);
+    border: white 1px solid;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .titulo {
+      background-image: url("../multimedia/giphy.webp");
+      background-size: cover;
+      background-position: center;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      font-size: 25px;
+      font-family: "Anton SC", sans-serif;
+      text-shadow: 4px 4px 0.5px #ffffff;
+    }
+
+    .espacio-reserva {
+      display: flex;
+      justify-content: center;
+      padding-top: 25px;
+      height: 50px;
+
+      .reserva {
+        width: 100px;
+        border-radius: 15px 0px 15px 0px;
+        background-color: $color-naranja;
+      }
+    }
+  }
+}
+
+.ventatitulo {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  color: $color-primario;
+}
+
+.venta {
+  padding-top: 20px;
+  @include sizes(100%, 100%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+
+  .productos {
+    background-color: $color-primario;
+    border: 3px solid $color-naranja;
+    @include sizes(250px, 300px);
+    padding: 20px;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .producto-venta {
+      @include sizes(250px, 250px);
+    }
+  }
+}
+
+.barber {
+  @include sizes(600px, 500px);
+
+}

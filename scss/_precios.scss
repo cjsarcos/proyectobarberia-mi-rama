@@ -1,0 +1,66 @@
+$botones: (
+  1: "Degradado",
+  2: "Moicano",
+  3: "La Cresta",
+  4: "Los Cuadros",
+  5: "Los 7",
+  6: "Degradado en V",
+);
+
+@mixin boton-estilos($num) {
+  $texto: map-get($botones, $num);
+
+  .boton-#{$num} {
+    content: "#{$texto}";
+    background-color: lighten(#e2bf5d, $num * 5%);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: darken(#dba634, $num * 5%);
+    }
+  }
+}
+
+.precios {
+  background: url("../multimedia/giphy (1).webp") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.ordenar-cards {
+  background: url("../multimedia/giphy (1).webp") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+.color-precio,
+.color-corte {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.cuestion {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.botones-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @each $key, $value in $botones {
+    @include boton-estilos($key);
+  }
+}

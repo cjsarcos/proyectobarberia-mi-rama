@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barbería</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabin:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="../js/citas.js"></script>
+    <script type="module" src="../js/datos.js"></script>
+  </head>
+  <body class="cuerpocitas">
+    <header>
+      <h1 class="titulo">Sistema de Citas B a r b e r i a C a r l o s</h1>
+    </header>
+
+    <form id="citaForm" class="formcita">
+      <input
+        type="text"
+        id="nombreCliente"
+        placeholder="Nombre del Cliente"
+        required
+      />
+      <input type="date" id="fechaCita" required />
+      <input type="time" id="horaCita" required />
+      <select id="profesional" required>
+        <option value="">Selecciona el profesional</option>
+      </select>
+
+      <div id="servicios">
+        <h3>Selecciona los servicios</h3>
+        <label class="labels">
+          <input type="checkbox" value="Corte" /> Corte 10€
+        </label>
+        <label class="labels">
+          <input type="checkbox" value="Barba" /> Barba 5€
+        </label>
+        <br />
+        <label class="labels">
+          <input type="checkbox" value="secarCabello" /> Secado 8€
+        </label>
+        <label class="labels">
+          <input type="checkbox" value="Planchado" /> Planchado 12€
+        </label>
+      </div>
+      <button type="submit">Agregar Cita</button>
+    </form>
+
+    <h2 class="citasagendadas">C i t a s - A g e n d a d a s</h2>
+    <section class="zonadecitas">
+      <ul id="listaCitas"></ul>
+    </section>
+  </body>
+</html>
